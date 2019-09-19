@@ -1,2 +1,2 @@
 *.db
-upload-files/
+/upload-files/*
