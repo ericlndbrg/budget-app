@@ -1,2 +1,3 @@
 *.db
 /upload-files/*
+.DS_STORE
