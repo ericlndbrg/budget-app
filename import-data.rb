@@ -3,7 +3,7 @@ require 'sqlite3'
 
 begin
 
-  db = SQLite3::Database.open 'transactions.db'
+  db = SQLite3::Database.open 'budget.db'
   db.execute('CREATE TABLE IF NOT EXISTS transactions(id INTEGER PRIMARY KEY, date TEXT, amount REAL, account TEXT, category TEXT, notes TEXT);')
 
   CSV.foreach(ARGF.argv[0], converters: :numeric, headers: true) do |row|
