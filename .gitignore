@@ -2,3 +2,5 @@
 /upload-files/*
 .DS_STORE
 *.txt
+*.schema
+
