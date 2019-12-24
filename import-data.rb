@@ -6,7 +6,9 @@ bank_accounts = {
   'WF Savings' => 2,
   'DCCU Checking' => 3,
   'DCCU Savings' => 4,
-  'DCCU $ Market' => 5
+  'DCCU Money Market' => 5,
+  'Cash' => 6,
+  'DCCU Visa' => 7
 }
 
 expense_categories = {
@@ -46,10 +48,10 @@ expense_categories = {
 
 begin
 
-  db = SQLite3::Database.open 'test.db'
+  db = SQLite3::Database.open 'prod.db'
 
   CSV.foreach(ARGF.argv[0], converters: :numeric, headers: true) do |row|
-    sql = "INSERT INTO Transactions(transaction_date, transaction_amount, bank_account_id, expense_category_id, notes) VALUES(#{row['transaction_date'].inspect}, #{row['transaction_amount']}, #{bank_accounts[row['bank_account_id']]}, #{expense_categories[row['expense_category_id']]}, #{row['notes'].inspect});"
+    sql = "INSERT INTO Transactions(transaction_date, transaction_amount, bank_account_id, expense_category_id, notes) VALUES(#{row['Date'].inspect}, #{row['Amount']}, #{bank_accounts[row['Account']]}, #{expense_categories[row['Category']]}, #{row['Notes'].inspect});"
     db.execute(sql)
   end
 
