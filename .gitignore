@@ -1,7 +1,5 @@
-*.db
+/db-files/*
+/notes/*
+/templates/*
 /upload-files/*
 .DS_STORE
-*.txt
-*.schema
-*.sql
-*.csv
