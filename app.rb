@@ -48,7 +48,7 @@ expense_categories = {
 
 begin
 
-  db = SQLite3::Database.open 'prod.db'
+  db = SQLite3::Database.open './db-files/prod.db'
 
   CSV.foreach(ARGF.argv[0], converters: :numeric, headers: true) do |row|
     sql = "INSERT INTO Transactions(transaction_date, transaction_amount, bank_account_id, expense_category_id, notes) VALUES(#{row['Date'].inspect}, #{row['Amount']}, #{bank_accounts[row['Account']]}, #{expense_categories[row['Category']]}, #{row['Notes'].inspect});"
