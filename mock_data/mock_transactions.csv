@@ -1,0 +1,6 @@
+bank,bank_account,expense_category,date_transacted,amount,note
+dccu,checking,income,2023-11-11,2000,paycheck
+wells fargo,checking,food,2023-11-12,-100.50,grocery
+wells fargo,savings,rent,2023-11-29,-1700,
+bank of america,checking,shopping,2023-11-30,-200,clothes
+wells fargo,savings,utilities,2023-11-29,-150,power and internet
